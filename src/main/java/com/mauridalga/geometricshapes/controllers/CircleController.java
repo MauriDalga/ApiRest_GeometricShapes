@@ -26,8 +26,6 @@ public class CircleController {
 
     @PostMapping
     public Circle createCircle(@Valid @RequestBody CircleDTO circleDTO) {
-        //TODO: Implement this
-
-        return new Circle();
+        return service.createCircle(circleDTO);
     }
 }

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ICircleRepository {
     List<Circle> getAllCircles();
+    Circle saveCircle(Circle circle);
 }

@@ -20,4 +20,10 @@ class CircleRepository implements ICircleRepository {
     public List<Circle> getAllCircles() {
         return mongoRepository.findAll();
     }
+
+    @Override
+    public Circle saveCircle(Circle circle) {
+        return mongoRepository.save(circle);
+    }
+
 }

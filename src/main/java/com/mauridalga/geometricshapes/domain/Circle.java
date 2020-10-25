@@ -4,11 +4,10 @@ import com.mauridalga.geometricshapes.domain.logic.GeometricShapeType;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collation = "circles")
+@Document(collection = "circles")
 public class Circle {
-
     @Id
-    private Long id;
+    private String id;
 
     private Double radius;
 
@@ -18,11 +17,11 @@ public class Circle {
 
     private GeometricShapeType type;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
