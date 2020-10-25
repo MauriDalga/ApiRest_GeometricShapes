@@ -1,15 +1,19 @@
 package com.mauridalga.geometricshapes.domain.logic;
 
-public class CircleLogic implements GeometricShapeLogic {
-    private final Double radius;
+public class TriangleLogic implements GeometricShapeLogic {
+    private final Double base;
+    private final Double side1;
+    private final Double side2;
 
-    public CircleLogic(Double radius) {
-        this.radius = radius;
+    public TriangleLogic(Double base, Double side1, Double side2) {
+        this.base = base;
+        this.side1 = side1;
+        this.side2 = side2;
     }
 
     @Override
     public Double getArea() {
-        return GeometricMathsUtil.calculateCircleArea(radius);
+        return null;
     }
 
     @Override
@@ -24,11 +28,11 @@ public class CircleLogic implements GeometricShapeLogic {
 
     @Override
     public Double getDiameter() {
-        return GeometricMathsUtil.calculateCircleDiameter(radius);
+        return null;
     }
 
     @Override
     public GeometricShapeType getGeometricShapeType() {
-        return GeometricShapeType.CIRCLE;
+        return GeometricShapeType.TRIANGLE;
     }
 }
