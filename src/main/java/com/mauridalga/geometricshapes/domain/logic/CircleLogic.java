@@ -1,4 +1,4 @@
-package com.mauridalga.geometricshapes.logic;
+package com.mauridalga.geometricshapes.domain.logic;
 
 public class CircleLogic implements GeometricShapeLogic {
     private final Double radius;

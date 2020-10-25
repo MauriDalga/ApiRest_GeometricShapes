@@ -1,9 +1,18 @@
 package com.mauridalga.geometricshapes.repositories;
 
-import com.mauridalga.geometricshapes.models.CircleDTO;
+import com.mauridalga.geometricshapes.domain.Circle;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ICircleRepository {
-    List<CircleDTO> getAllCircles();
+    List<Circle> getAll();
+
+    Circle insert(Circle circle);
+
+    Optional<Circle> findById(String id);
+
+    Circle save(Circle circle);
+
+    void deleteById(String id);
 }
