@@ -11,7 +11,7 @@ import com.mauridalga.geometricshapes.models.TriangleDTO;
 import org.springframework.stereotype.Component;
 
 @Component
-public class GeometricShapeLogicConcreteFactory implements GeometricShapeLogicFactory {
+class GeometricShapeLogicConcreteFactory implements GeometricShapeLogicFactory {
     @Override
     public GeometricShapeLogic create(GeometricShapeDTO geometricShapeDTO) {
         if(geometricShapeDTO instanceof CircleDTO) {

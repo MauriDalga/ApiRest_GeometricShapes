@@ -13,17 +13,17 @@ public class TriangleLogic implements GeometricShapeLogic {
 
     @Override
     public Double getArea() {
-        return null;
+        return GeometricMathsUtil.calculateTriangleArea(base, side1, side2);
     }
 
     @Override
     public Double getBase() {
-        return null;
+        return base;
     }
 
     @Override
     public Double getHeight() {
-        return null;
+        return GeometricMathsUtil.calculateTriangleHeight(base, side1, side2);
     }
 
     @Override
