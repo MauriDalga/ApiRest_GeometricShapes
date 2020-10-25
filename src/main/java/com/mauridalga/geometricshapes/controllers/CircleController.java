@@ -1,12 +1,12 @@
 package com.mauridalga.geometricshapes.controllers;
 
+import com.mauridalga.geometricshapes.domain.Circle;
 import com.mauridalga.geometricshapes.models.CircleDTO;
 import com.mauridalga.geometricshapes.services.ICircleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -20,7 +20,14 @@ public class CircleController {
     }
 
     @GetMapping
-    public List<CircleDTO> getCircles() {
+    public List<Circle> getCircles() {
         return service.getAllCircles();
+    }
+
+    @PostMapping
+    public Circle createCircle(@Valid @RequestBody CircleDTO circleDTO) {
+        //TODO: Implement this
+
+        return new Circle();
     }
 }

@@ -1,5 +1,6 @@
-package com.mauridalga.geometricshapes.logic;
+package com.mauridalga.geometricshapes.domain.logic;
 
+import com.mauridalga.geometricshapes.domain.logic.GeometricMathsUtil;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

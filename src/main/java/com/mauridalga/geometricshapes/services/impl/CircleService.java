@@ -1,6 +1,6 @@
 package com.mauridalga.geometricshapes.services.impl;
 
-import com.mauridalga.geometricshapes.models.CircleDTO;
+import com.mauridalga.geometricshapes.domain.Circle;
 import com.mauridalga.geometricshapes.repositories.ICircleRepository;
 import com.mauridalga.geometricshapes.services.ICircleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ class CircleService implements ICircleService {
     }
 
     @Override
-    public List<CircleDTO> getAllCircles() {
+    public List<Circle> getAllCircles() {
         return repository.getAllCircles();
     }
 }

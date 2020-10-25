@@ -1,6 +1,6 @@
 package com.mauridalga.geometricshapes.repositories.impl;
 
-import com.mauridalga.geometricshapes.models.CircleDTO;
+import com.mauridalga.geometricshapes.domain.Circle;
 import com.mauridalga.geometricshapes.repositories.ICircleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,7 +17,7 @@ class CircleRepository implements ICircleRepository {
     }
 
     @Override
-    public List<CircleDTO> getAllCircles() {
+    public List<Circle> getAllCircles() {
         return mongoRepository.findAll();
     }
 }

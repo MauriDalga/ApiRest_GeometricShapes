@@ -1,4 +1,4 @@
-package com.mauridalga.geometricshapes.logic;
+package com.mauridalga.geometricshapes.domain.logic;
 
 final class GeometricMathsUtil {
     private GeometricMathsUtil() {

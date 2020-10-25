@@ -1,10 +1,9 @@
 package com.mauridalga.geometricshapes.services;
 
-import com.mauridalga.geometricshapes.models.CircleDTO;
-import org.springframework.stereotype.Service;
+import com.mauridalga.geometricshapes.domain.Circle;
 
 import java.util.List;
 
 public interface ICircleService {
-    List<CircleDTO> getAllCircles();
+    List<Circle> getAllCircles();
 }
