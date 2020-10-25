@@ -33,7 +33,7 @@ class CircleRepository implements ICircleRepository {
     }
 
     @Override
-    public Circle save(Circle circle) {
+    public Circle update(Circle circle) {
         return mongoRepository.save(circle);
     }
 

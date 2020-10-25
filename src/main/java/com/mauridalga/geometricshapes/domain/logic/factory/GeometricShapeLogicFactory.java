@@ -1,10 +1,8 @@
 package com.mauridalga.geometricshapes.domain.logic.factory;
 
 import com.mauridalga.geometricshapes.domain.logic.GeometricShapeLogic;
-import com.mauridalga.geometricshapes.domain.logic.GeometricShapeType;
-
-import java.math.BigDecimal;
+import com.mauridalga.geometricshapes.models.GeometricShapeDTO;
 
 public interface GeometricShapeLogicFactory {
-    GeometricShapeLogic create(GeometricShapeType type, Double... args);
+    GeometricShapeLogic create(GeometricShapeDTO geometricShapeDTO);
 }

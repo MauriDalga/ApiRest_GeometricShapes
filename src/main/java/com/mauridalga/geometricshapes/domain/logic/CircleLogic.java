@@ -7,13 +7,9 @@ public class CircleLogic implements GeometricShapeLogic {
         this.radius = radius;
     }
 
-    public Double getRadius() {
-        return radius;
-    }
-
     @Override
     public Double getArea() {
-        return GeometricMathsUtil.calculateCircleDiameter(radius);
+        return GeometricMathsUtil.calculateCircleArea(radius);
     }
 
     @Override

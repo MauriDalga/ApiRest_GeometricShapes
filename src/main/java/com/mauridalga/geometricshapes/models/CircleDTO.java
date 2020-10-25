@@ -3,7 +3,7 @@ package com.mauridalga.geometricshapes.models;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-public class CircleDTO {
+public class CircleDTO implements GeometricShapeDTO {
     @NotNull
     @Min(0)
     private Double radius;
