@@ -13,4 +13,6 @@ public interface ITriangleRepository {
     Triangle update(Triangle triangle);
 
     Optional<Triangle> findById(String id);
+
+    void deleteById(String id);
 }

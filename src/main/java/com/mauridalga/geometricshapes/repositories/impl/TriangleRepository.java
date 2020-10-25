@@ -34,4 +34,9 @@ class TriangleRepository implements ITriangleRepository {
     public Optional<Triangle> findById(String id) {
         return mongoRepository.findById(id);
     }
+
+    @Override
+    public void deleteById(String id) {
+        mongoRepository.deleteById(id);
+    }
 }

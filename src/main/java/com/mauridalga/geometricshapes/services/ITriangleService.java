@@ -11,4 +11,6 @@ public interface ITriangleService {
     Triangle create(TriangleDTO triangleDTO);
 
     Triangle updateById(String id, TriangleDTO triangleDTO);
+
+    void deleteById(String id);
 }

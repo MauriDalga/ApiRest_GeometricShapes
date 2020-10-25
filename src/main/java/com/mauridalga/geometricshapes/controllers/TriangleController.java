@@ -33,4 +33,9 @@ public class TriangleController {
     public Triangle update(@PathVariable String id, @Valid @RequestBody TriangleDTO triangleDTO) {
         return service.updateById(id, triangleDTO);
     }
+
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable String id) {
+        service.deleteById(id);
+    }
 }

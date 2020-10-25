@@ -43,6 +43,12 @@ class TriangleService implements ITriangleService {
         return repository.update(triangle);
     }
 
+    @Override
+    public void deleteById(String id) {
+        validateExistsById(id);
+        repository.deleteById(id);
+    }
+
     private void validateExistsById(String id) {
         Optional<Triangle> triangleOptional = repository.findById(id);
         if (triangleOptional.isEmpty()) {
