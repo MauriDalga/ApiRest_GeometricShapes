@@ -7,10 +7,12 @@ import com.mauridalga.geometricshapes.domain.logic.factory.GeometricShapeLogicFa
 import com.mauridalga.geometricshapes.models.CircleDTO;
 import com.mauridalga.geometricshapes.repositories.ICircleRepository;
 import com.mauridalga.geometricshapes.services.ICircleService;
+import com.mauridalga.geometricshapes.services.exceptions.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 class CircleService implements ICircleService {
@@ -24,14 +26,26 @@ class CircleService implements ICircleService {
     }
 
     @Override
-    public List<Circle> getAllCircles() {
-        return repository.getAllCircles();
+    public List<Circle> getAll() {
+        return repository.getAll();
     }
 
     @Override
-    public Circle createCircle(CircleDTO circleDTO) {
+    public Circle create(CircleDTO circleDTO) {
         Circle circle = makeCircle(circleDTO);
-        return repository.saveCircle(circle);
+        return repository.insert(circle);
+    }
+
+    @Override
+    public Circle update(String id, CircleDTO circleDTO) {
+        Optional<Circle> circleOptional = repository.findById(id);
+        if (circleOptional.isEmpty()) {
+            throw new EntityNotFoundException(String.format("Circle whit id:'{%s}' not found", id));
+        }
+
+        Circle circle = makeCircle(circleDTO);
+        circle.setId(id);
+        return repository.save(circle);
     }
 
     private Circle makeCircle(CircleDTO circleDTO) {

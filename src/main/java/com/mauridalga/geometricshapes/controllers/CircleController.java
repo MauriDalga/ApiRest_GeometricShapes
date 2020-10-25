@@ -20,12 +20,17 @@ public class CircleController {
     }
 
     @GetMapping
-    public List<Circle> getCircles() {
-        return service.getAllCircles();
+    public List<Circle> getAll() {
+        return service.getAll();
     }
 
     @PostMapping
-    public Circle createCircle(@Valid @RequestBody CircleDTO circleDTO) {
-        return service.createCircle(circleDTO);
+    public Circle create(@Valid @RequestBody CircleDTO circleDTO) {
+        return service.create(circleDTO);
+    }
+
+    @PutMapping("{id}")
+    public Circle updateCircle(@PathVariable String id, @Valid @RequestBody CircleDTO circleDTO) {
+        return service.update(id, circleDTO);
     }
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 class CircleRepository implements ICircleRepository {
@@ -17,13 +18,24 @@ class CircleRepository implements ICircleRepository {
     }
 
     @Override
-    public List<Circle> getAllCircles() {
+    public List<Circle> getAll() {
         return mongoRepository.findAll();
     }
 
     @Override
-    public Circle saveCircle(Circle circle) {
+    public Circle insert(Circle circle) {
+        return mongoRepository.insert(circle);
+    }
+
+    @Override
+    public Optional<Circle> findById(String id) {
+        return mongoRepository.findById(id);
+    }
+
+    @Override
+    public Circle save(Circle circle) {
         return mongoRepository.save(circle);
     }
+
 
 }
