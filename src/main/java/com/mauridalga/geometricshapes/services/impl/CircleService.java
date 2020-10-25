@@ -40,7 +40,7 @@ class CircleService implements ICircleService {
         validateExistsById(id);
         Circle circle = makeCircle(circleDTO);
         circle.setId(id);
-        return repository.save(circle);
+        return repository.update(circle);
     }
 
     @Override

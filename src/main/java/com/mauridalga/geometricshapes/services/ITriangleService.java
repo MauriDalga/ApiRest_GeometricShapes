@@ -9,4 +9,6 @@ public interface ITriangleService {
     List<Triangle> getAll();
 
     Triangle create(TriangleDTO triangleDTO);
+
+    Triangle updateById(String id, TriangleDTO triangleDTO);
 }

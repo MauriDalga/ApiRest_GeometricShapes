@@ -6,10 +6,12 @@ import com.mauridalga.geometricshapes.domain.logic.factory.GeometricShapeLogicFa
 import com.mauridalga.geometricshapes.models.TriangleDTO;
 import com.mauridalga.geometricshapes.repositories.ITriangleRepository;
 import com.mauridalga.geometricshapes.services.ITriangleService;
+import com.mauridalga.geometricshapes.services.exceptions.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 class TriangleService implements ITriangleService {
@@ -31,6 +33,21 @@ class TriangleService implements ITriangleService {
     public Triangle create(TriangleDTO triangleDTO) {
         Triangle triangle = makeTriangle(triangleDTO);
         return repository.insert(triangle);
+    }
+
+    @Override
+    public Triangle updateById(String id, TriangleDTO triangleDTO) {
+        validateExistsById(id);
+        Triangle triangle = makeTriangle(triangleDTO);
+        triangle.setId(id);
+        return repository.update(triangle);
+    }
+
+    private void validateExistsById(String id) {
+        Optional<Triangle> triangleOptional = repository.findById(id);
+        if (triangleOptional.isEmpty()) {
+            throw new EntityNotFoundException(String.format("Triangle with id:'{%s}' not found", id));
+        }
     }
 
     private Triangle makeTriangle(TriangleDTO triangleDTO) {

@@ -5,6 +5,7 @@ import com.mauridalga.geometricshapes.repositories.ITriangleRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 class TriangleRepository implements ITriangleRepository {
@@ -22,5 +23,15 @@ class TriangleRepository implements ITriangleRepository {
     @Override
     public Triangle insert(Triangle triangle) {
         return mongoRepository.insert(triangle);
+    }
+
+    @Override
+    public Triangle update(Triangle triangle) {
+        return mongoRepository.save(triangle);
+    }
+
+    @Override
+    public Optional<Triangle> findById(String id) {
+        return mongoRepository.findById(id);
     }
 }

@@ -28,4 +28,9 @@ public class TriangleController {
     public Triangle create(@Valid @RequestBody TriangleDTO triangleDTO) {
         return service.create(triangleDTO);
     }
+
+    @PutMapping("{id}")
+    public Triangle update(@PathVariable String id, @Valid @RequestBody TriangleDTO triangleDTO) {
+        return service.updateById(id, triangleDTO);
+    }
 }
