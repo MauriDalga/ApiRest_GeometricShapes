@@ -2,7 +2,6 @@ package com.mauridalga.geometricshapes.services.impl;
 
 import com.mauridalga.geometricshapes.domain.Triangle;
 import com.mauridalga.geometricshapes.domain.logic.GeometricShapeLogic;
-import com.mauridalga.geometricshapes.domain.logic.GeometricShapeType;
 import com.mauridalga.geometricshapes.domain.logic.factory.GeometricShapeLogicFactory;
 import com.mauridalga.geometricshapes.models.TriangleDTO;
 import com.mauridalga.geometricshapes.repositories.ITriangleRepository;
@@ -35,12 +34,7 @@ class TriangleService implements ITriangleService {
     }
 
     private Triangle makeTriangle(TriangleDTO triangleDTO) {
-        GeometricShapeLogic triangleLogic = logicFactory.create(
-                GeometricShapeType.TRIANGLE,
-                triangleDTO.getBase(),
-                triangleDTO.getSide1(),
-                triangleDTO.getSide2()
-        );
+        GeometricShapeLogic triangleLogic = logicFactory.create(triangleDTO);
         Triangle triangle = new Triangle();
         triangle.setBase(triangleDTO.getBase());
         triangle.setSide1(triangleDTO.getSide1());

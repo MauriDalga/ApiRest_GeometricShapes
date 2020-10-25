@@ -2,7 +2,6 @@ package com.mauridalga.geometricshapes.services.impl;
 
 import com.mauridalga.geometricshapes.domain.Circle;
 import com.mauridalga.geometricshapes.domain.logic.GeometricShapeLogic;
-import com.mauridalga.geometricshapes.domain.logic.GeometricShapeType;
 import com.mauridalga.geometricshapes.domain.logic.factory.GeometricShapeLogicFactory;
 import com.mauridalga.geometricshapes.models.CircleDTO;
 import com.mauridalga.geometricshapes.repositories.ICircleRepository;
@@ -58,7 +57,7 @@ class CircleService implements ICircleService {
     }
 
     private Circle makeCircle(CircleDTO circleDTO) {
-        GeometricShapeLogic circleLogic = logicFactory.create(GeometricShapeType.CIRCLE, circleDTO.getRadius());
+        GeometricShapeLogic circleLogic = logicFactory.create(circleDTO);
         Circle circle = new Circle();
         circle.setRadius(circleDTO.getRadius());
         circle.setArea(circleLogic.getArea());

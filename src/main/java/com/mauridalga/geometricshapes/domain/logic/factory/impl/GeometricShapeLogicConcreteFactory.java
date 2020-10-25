@@ -1,17 +1,25 @@
 package com.mauridalga.geometricshapes.domain.logic.factory.impl;
 
-import com.mauridalga.geometricshapes.domain.logic.*;
+import com.mauridalga.geometricshapes.domain.logic.CircleLogic;
+import com.mauridalga.geometricshapes.domain.logic.DummyGeometricLogic;
+import com.mauridalga.geometricshapes.domain.logic.GeometricShapeLogic;
+import com.mauridalga.geometricshapes.domain.logic.TriangleLogic;
 import com.mauridalga.geometricshapes.domain.logic.factory.GeometricShapeLogicFactory;
+import com.mauridalga.geometricshapes.models.CircleDTO;
+import com.mauridalga.geometricshapes.models.GeometricShapeDTO;
+import com.mauridalga.geometricshapes.models.TriangleDTO;
 import org.springframework.stereotype.Component;
 
 @Component
 public class GeometricShapeLogicConcreteFactory implements GeometricShapeLogicFactory {
     @Override
-    public GeometricShapeLogic create(GeometricShapeType type, Double... args) {
-        if(type == GeometricShapeType.CIRCLE) {
-            return new CircleLogic(args[0]);
-        } else if (type == GeometricShapeType.TRIANGLE) {
-            return new TriangleLogic(args[0], args[1], args[2]);
+    public GeometricShapeLogic create(GeometricShapeDTO geometricShapeDTO) {
+        if(geometricShapeDTO instanceof CircleDTO) {
+            CircleDTO circleDTO = (CircleDTO) geometricShapeDTO;
+            return new CircleLogic(circleDTO.getRadius());
+        } else if (geometricShapeDTO instanceof TriangleDTO) {
+            TriangleDTO triangleDTO = (TriangleDTO) geometricShapeDTO;
+            return new TriangleLogic(triangleDTO.getBase(), triangleDTO.getSide1(), triangleDTO.getSide2());
         }
         return new DummyGeometricLogic();
     }
