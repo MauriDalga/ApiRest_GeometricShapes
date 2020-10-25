@@ -50,7 +50,7 @@
 
     <repositories>
         <repository>
-            <id>java-net-repo</id>
+            <id>mvn-repository-central</id>
             <url>https://mvnrepository.com/</url>
         </repository>
     </repositories>

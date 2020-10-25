@@ -15,7 +15,7 @@ public class Circle implements GeometricShape{
 
     @Override
     public Double getArea() {
-        return null;
+        return GeometricMathsUtil.calculateCircleDiameter(radius);
     }
 
     @Override
