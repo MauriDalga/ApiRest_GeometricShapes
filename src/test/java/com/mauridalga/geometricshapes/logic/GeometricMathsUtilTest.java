@@ -1,4 +1,4 @@
-package com.mauridalga.geometricshapes.utils;
+package com.mauridalga.geometricshapes.logic;
 
 import org.junit.Test;
 

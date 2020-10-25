@@ -1,6 +1,6 @@
-package com.mauridalga.geometricshapes.utils;
+package com.mauridalga.geometricshapes.logic;
 
-public final class GeometricMathsUtil {
+final class GeometricMathsUtil {
     private GeometricMathsUtil() {
     }
 

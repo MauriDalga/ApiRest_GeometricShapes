@@ -1,16 +1,14 @@
-package com.mauridalga.geometricshapes.domain;
+package com.mauridalga.geometricshapes.logic;
 
-import com.mauridalga.geometricshapes.utils.GeometricMathsUtil;
+public class CircleLogic implements GeometricShapeLogic {
+    private final Double radius;
 
-public class Circle implements GeometricShape{
-    private Double radius;
+    public CircleLogic(Double radius) {
+        this.radius = radius;
+    }
 
     public Double getRadius() {
         return radius;
-    }
-
-    public void setRadius(Double radius) {
-        this.radius = radius;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.mauridalga.geometricshapes.domain;
+package com.mauridalga.geometricshapes.logic;
 
 public enum GeometricShapeType {
     CIRCLE,

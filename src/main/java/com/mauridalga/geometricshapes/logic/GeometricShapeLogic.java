@@ -1,9 +1,13 @@
-package com.mauridalga.geometricshapes.domain;
+package com.mauridalga.geometricshapes.logic;
 
-public interface GeometricShape {
+public interface GeometricShapeLogic {
     Double getArea();
+
     Double getBase();
+
     Double getHeight();
+
     Double getDiameter();
+
     GeometricShapeType getGeometricShapeType();
 }

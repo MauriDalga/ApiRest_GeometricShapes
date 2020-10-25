@@ -1,5 +1,7 @@
 package com.mauridalga.geometricshapes.models;
 
+import com.mauridalga.geometricshapes.logic.GeometricShapeType;
+
 public class CircleDTO {
     private Long id;
 
@@ -8,6 +10,8 @@ public class CircleDTO {
     private Double diameter;
 
     private Double area;
+
+    private GeometricShapeType type;
 
     public Long getId() {
         return id;
@@ -39,5 +43,13 @@ public class CircleDTO {
 
     public void setArea(Double area) {
         this.area = area;
+    }
+
+    public GeometricShapeType getType() {
+        return type;
+    }
+
+    public void setType(GeometricShapeType type) {
+        this.type = type;
     }
 }
