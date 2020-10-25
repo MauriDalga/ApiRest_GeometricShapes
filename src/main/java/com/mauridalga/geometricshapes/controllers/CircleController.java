@@ -30,7 +30,12 @@ public class CircleController {
     }
 
     @PutMapping("{id}")
-    public Circle updateCircle(@PathVariable String id, @Valid @RequestBody CircleDTO circleDTO) {
-        return service.update(id, circleDTO);
+    public Circle update(@PathVariable String id, @Valid @RequestBody CircleDTO circleDTO) {
+        return service.updateById(id, circleDTO);
+    }
+
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable String id) {
+        service.deleteById(id);
     }
 }

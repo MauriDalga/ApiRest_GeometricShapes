@@ -37,5 +37,8 @@ class CircleRepository implements ICircleRepository {
         return mongoRepository.save(circle);
     }
 
-
+    @Override
+    public void deleteById(String id) {
+        mongoRepository.deleteById(id);
+    }
 }

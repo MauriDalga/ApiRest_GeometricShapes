@@ -11,5 +11,7 @@ public interface ICircleService {
 
     Circle create(CircleDTO circleDTO);
 
-    Circle update(String id, CircleDTO circleDTO);
+    Circle updateById(String id, CircleDTO circleDTO);
+
+    void deleteById(String id);
 }

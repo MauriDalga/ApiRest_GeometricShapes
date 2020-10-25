@@ -13,4 +13,6 @@ public interface ICircleRepository {
     Optional<Circle> findById(String id);
 
     Circle save(Circle circle);
+
+    void deleteById(String id);
 }

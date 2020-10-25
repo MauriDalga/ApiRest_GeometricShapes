@@ -37,15 +37,24 @@ class CircleService implements ICircleService {
     }
 
     @Override
-    public Circle update(String id, CircleDTO circleDTO) {
-        Optional<Circle> circleOptional = repository.findById(id);
-        if (circleOptional.isEmpty()) {
-            throw new EntityNotFoundException(String.format("Circle whit id:'{%s}' not found", id));
-        }
-
+    public Circle updateById(String id, CircleDTO circleDTO) {
+        validateExistsById(id);
         Circle circle = makeCircle(circleDTO);
         circle.setId(id);
         return repository.save(circle);
+    }
+
+    @Override
+    public void deleteById(String id) {
+        validateExistsById(id);
+        repository.deleteById(id);
+    }
+
+    private void validateExistsById(String id) {
+        Optional<Circle> circleOptional = repository.findById(id);
+        if (circleOptional.isEmpty()) {
+            throw new EntityNotFoundException(String.format("Circle with id:'{%s}' not found", id));
+        }
     }
 
     private Circle makeCircle(CircleDTO circleDTO) {
