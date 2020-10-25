@@ -6,5 +6,5 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface ICircleService {
-    List<CircleDTO> getCircles();
+    List<CircleDTO> getAllCircles();
 }

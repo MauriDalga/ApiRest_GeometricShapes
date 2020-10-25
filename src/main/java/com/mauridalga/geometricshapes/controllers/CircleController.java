@@ -21,6 +21,6 @@ public class CircleController {
 
     @GetMapping
     public List<CircleDTO> getCircles() {
-        return service.getCircles();
+        return service.getAllCircles();
     }
 }
