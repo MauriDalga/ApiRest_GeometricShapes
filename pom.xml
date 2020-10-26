@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.mauridalga</groupId>
     <artifactId>geometricshapes</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>geometricshapes</name>
     <description>Api REST of Geometric Shapes</description>
 
