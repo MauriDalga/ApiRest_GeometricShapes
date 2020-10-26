@@ -2,40 +2,17 @@ package com.mauridalga.geometricshapes.controllers;
 
 import com.mauridalga.geometricshapes.domain.Triangle;
 import com.mauridalga.geometricshapes.models.TriangleDTO;
-import com.mauridalga.geometricshapes.services.ITriangleService;
+import com.mauridalga.geometricshapes.services.IService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
-import java.util.List;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/triangles")
-public class TriangleController {
-    private final ITriangleService service;
+public class TriangleController extends BaseController<Triangle, TriangleDTO> {
 
     @Autowired
-    public TriangleController(ITriangleService service) {
-        this.service = service;
-    }
-
-    @GetMapping
-    public List<Triangle> getAll() {
-        return service.getAll();
-    }
-
-    @PostMapping
-    public Triangle create(@Valid @RequestBody TriangleDTO triangleDTO) {
-        return service.create(triangleDTO);
-    }
-
-    @PutMapping("{id}")
-    public Triangle update(@PathVariable String id, @Valid @RequestBody TriangleDTO triangleDTO) {
-        return service.updateById(id, triangleDTO);
-    }
-
-    @DeleteMapping("{id}")
-    public void delete(@PathVariable String id) {
-        service.deleteById(id);
+    public TriangleController(IService<Triangle, TriangleDTO> service) {
+        super(service);
     }
 }

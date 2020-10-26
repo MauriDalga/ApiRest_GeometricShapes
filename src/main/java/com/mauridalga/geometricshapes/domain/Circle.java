@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "circles")
-public class Circle {
+public class Circle implements IEntity {
     @Id
     private String id;
 
