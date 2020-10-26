@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 public class SquareDTO implements GeometricShapeDTO {
     @NotNull
     @Min(0)
-    public Double base;
+    private Double base;
 
     public Double getBase() {
         return base;

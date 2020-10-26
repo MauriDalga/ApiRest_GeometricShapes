@@ -36,6 +36,7 @@ public class SquareService implements ISquareService {
         square.setBase(squareLogic.getBase());
         square.setHeight(squareLogic.getHeight());
         square.setArea(squareLogic.getArea());
+        square.setType(squareLogic.getGeometricShapeType());
         return square;
     }
 }
