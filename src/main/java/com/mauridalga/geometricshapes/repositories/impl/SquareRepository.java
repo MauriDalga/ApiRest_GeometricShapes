@@ -1,13 +1,13 @@
 package com.mauridalga.geometricshapes.repositories.impl;
 
-import com.mauridalga.geometricshapes.domain.Triangle;
+import com.mauridalga.geometricshapes.domain.Square;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-class TriangleRepository extends BaseRepository<Triangle> {
+class SquareRepository extends BaseRepository<Square> {
     @Autowired
-    public TriangleRepository(TriangleMongoRepository mongoRepository) {
+    public SquareRepository(SquareMongoRepository mongoRepository) {
         super(mongoRepository);
     }
 }

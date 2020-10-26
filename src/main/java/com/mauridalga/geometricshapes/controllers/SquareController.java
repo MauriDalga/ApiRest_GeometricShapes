@@ -1,18 +1,18 @@
 package com.mauridalga.geometricshapes.controllers;
 
-import com.mauridalga.geometricshapes.domain.Circle;
-import com.mauridalga.geometricshapes.models.CircleDTO;
+import com.mauridalga.geometricshapes.domain.Square;
+import com.mauridalga.geometricshapes.models.SquareDTO;
 import com.mauridalga.geometricshapes.services.IService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/circles")
-public class CircleController extends BaseController<Circle, CircleDTO> {
+@RequestMapping("/squares")
+public class SquareController extends BaseController<Square, SquareDTO> {
 
     @Autowired
-    public CircleController(IService<Circle, CircleDTO> service) {
+    public SquareController(IService<Square, SquareDTO> service) {
         super(service);
     }
 }

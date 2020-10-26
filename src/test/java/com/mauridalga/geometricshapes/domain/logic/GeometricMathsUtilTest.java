@@ -9,7 +9,7 @@ public class GeometricMathsUtilTest {
     private static final double DELTA = 1e-14;
 
     @Test
-    public void CalculateCircleDiameter_WhitNullRadius_ShouldReturnNull() {
+    public void CalculateCircleDiameter_WithNullRadius_ShouldReturnNull() {
         // Arrange
         Double circleRadius = null;
 
@@ -21,7 +21,7 @@ public class GeometricMathsUtilTest {
     }
 
     @Test
-    public void CalculateCircleDiameter_WhitPositiveRadius_ShouldReturnExpectedDiameter() {
+    public void CalculateCircleDiameter_WithPositiveRadius_ShouldReturnExpectedDiameter() {
         // Arrange
         Double circleRadius = 5.5;
         Double expectedDiameter = 11d;
@@ -34,7 +34,7 @@ public class GeometricMathsUtilTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void CalculateCircleDiameter_WhitNegativeRadius_ShouldThrowException() {
+    public void CalculateCircleDiameter_WithNegativeRadius_ShouldThrowException() {
         // Arrange
         Double circleRadius = -3.3;
 
@@ -43,7 +43,7 @@ public class GeometricMathsUtilTest {
     }
 
     @Test
-    public void CalculateCircleArea_WhitNullRadius_ShouldReturnNull() {
+    public void CalculateCircleArea_WithNullRadius_ShouldReturnNull() {
         // Arrange
         Double circleRadius = null;
 
@@ -55,7 +55,7 @@ public class GeometricMathsUtilTest {
     }
 
     @Test
-    public void CalculateCircleArea_WhitPositiveRadius_ShouldReturnExpectedArea() {
+    public void CalculateCircleArea_WithPositiveRadius_ShouldReturnExpectedArea() {
         // Arrange
         Double circleRadius = 3d;
         Double expectedArea = 28.274333882308138;
@@ -68,7 +68,7 @@ public class GeometricMathsUtilTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void CalculateCircleArea_WhitNegativeRadius_ShouldThrowException() {
+    public void CalculateCircleArea_WithNegativeRadius_ShouldThrowException() {
         // Arrange
         Double circleRadius = -3.3;
 
@@ -77,7 +77,7 @@ public class GeometricMathsUtilTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void ValidateTriangleValues_WhitNegativeBase_ShouldThrowException() {
+    public void ValidateTriangleValues_WithNegativeBase_ShouldThrowException() {
         // Arrange
         Double baseNegative = -2d;
 
@@ -86,7 +86,7 @@ public class GeometricMathsUtilTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void ValidateTriangleValues_WhitASideNegative_ShouldThrowException() {
+    public void ValidateTriangleValues_WithASideNegative_ShouldThrowException() {
         // Arrange
         Double aNegative = -2d;
 
@@ -95,7 +95,7 @@ public class GeometricMathsUtilTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void ValidateTriangleValues_WhitCSideNegative_ShouldThrowException() {
+    public void ValidateTriangleValues_WithCSideNegative_ShouldThrowException() {
         // Arrange
         Double cNegative = -2d;
 
@@ -104,7 +104,7 @@ public class GeometricMathsUtilTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void ValidateTriangleValues_WhitZeroBase_ShouldThrowException() {
+    public void ValidateTriangleValues_WithZeroBase_ShouldThrowException() {
         // Arrange
         Double baseZero = 0d;
 
@@ -113,7 +113,7 @@ public class GeometricMathsUtilTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void CalculateTriangleHeight_WhitZeroASide_ShouldThrowException() {
+    public void CalculateTriangleHeight_WithZeroASide_ShouldThrowException() {
         // Arrange
         Double aZero = 0d;
 
@@ -122,7 +122,7 @@ public class GeometricMathsUtilTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void ValidateTriangleValues_WhitZeroCSide_ShouldThrowException() {
+    public void ValidateTriangleValues_WithZeroCSide_ShouldThrowException() {
         // Arrange
         Double cZero = 0d;
 
@@ -131,7 +131,7 @@ public class GeometricMathsUtilTest {
     }
 
     @Test
-    public void CalculateTriangleHeight_WhitNullSidesValues_ShouldReturnNull() {
+    public void CalculateTriangleHeight_WithNullSidesValues_ShouldReturnNull() {
         // Arrange
         Double base = null;
         Double a = null;
@@ -149,7 +149,7 @@ public class GeometricMathsUtilTest {
     }
 
     @Test
-    public void CalculateTriangleHeight_WhitValidSides_ShouldReturnExpectedHeight() {
+    public void CalculateTriangleHeight_WithValidSides_ShouldReturnExpectedHeight() {
         // Arrange
         Double base = 10d;
         Double a = 8d;
@@ -164,7 +164,7 @@ public class GeometricMathsUtilTest {
     }
 
     @Test
-    public void CalculateTriangleArea_WhitNullSidesValues_ShouldReturnNull() {
+    public void CalculateTriangleArea_WithNullSidesValues_ShouldReturnNull() {
         // Arrange
         Double base = null;
         Double a = null;
@@ -182,7 +182,7 @@ public class GeometricMathsUtilTest {
     }
 
     @Test
-    public void CalculateTriangleArea_WhitValidSides_ShouldReturnExpectedHeight() {
+    public void CalculateTriangleArea_WithValidSides_ShouldReturnExpectedHeight() {
         // Arrange
         Double base = 10d;
         Double a = 8d;
@@ -193,6 +193,49 @@ public class GeometricMathsUtilTest {
         Double resultArea = GeometricMathsUtil.calculateTriangleArea(base, c, a);
 
         //Assert
+        assertEquals(expectedArea, resultArea, DELTA);
+    }
+    
+    @Test
+    public void CalculateSquareArea_WithNullBaseValue_ShouldReturnNull() {
+        // Arrange
+        Double base = null;
+
+        // Act
+        Double resultArea = GeometricMathsUtil.calculateSquareArea(base);
+
+        // Arrange
+        assertNull(resultArea);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void CalculateSquareArea_WithZeroBaseValue_ShouldReturnException() {
+        // Arrange
+        Double zeroBase = 0d;
+
+        // Act
+        Double resultArea = GeometricMathsUtil.calculateSquareArea(zeroBase);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void CalculateSquareArea_WithNegativeBaseValue_ShouldReturnException() {
+        // Arrange
+        Double negativeBase = -9d;
+
+        // Act
+        Double resultArea = GeometricMathsUtil.calculateSquareArea(negativeBase);
+    }
+
+    @Test
+    public void CalculateSquareArea_WithValidBaseValue_ShouldReturnExpectedArea() {
+        // Arrange
+        Double base = 5d;
+        Double expectedArea = 25d;
+
+        // Act
+        Double resultArea = GeometricMathsUtil.calculateSquareArea(base);
+
+        // Arrange
         assertEquals(expectedArea, resultArea, DELTA);
     }
 }

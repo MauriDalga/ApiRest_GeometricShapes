@@ -4,14 +4,14 @@ import com.mauridalga.geometricshapes.domain.logic.GeometricShapeType;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "circles")
-public class Circle implements IEntity {
+@Document(collection = "squares")
+public class Square implements IEntity {
     @Id
     private String id;
 
-    private Double radius;
+    private Double base;
 
-    private Double diameter;
+    private Double height;
 
     private Double area;
 
@@ -25,20 +25,20 @@ public class Circle implements IEntity {
         this.id = id;
     }
 
-    public Double getRadius() {
-        return radius;
+    public Double getBase() {
+        return base;
     }
 
-    public void setRadius(Double radius) {
-        this.radius = radius;
+    public void setBase(Double base) {
+        this.base = base;
     }
 
-    public Double getDiameter() {
-        return diameter;
+    public Double getHeight() {
+        return height;
     }
 
-    public void setDiameter(Double diameter) {
-        this.diameter = diameter;
+    public void setHeight(Double height) {
+        this.height = height;
     }
 
     public Double getArea() {
