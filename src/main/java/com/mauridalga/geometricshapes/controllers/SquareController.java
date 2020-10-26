@@ -28,4 +28,9 @@ public class SquareController {
     public Square create(@Valid @RequestBody SquareDTO squareDTO) {
         return service.create(squareDTO);
     }
+
+    @PutMapping("{id}")
+    public Square update(@PathVariable String id, @Valid @RequestBody SquareDTO squareDTO) {
+        return service.updateById(id, squareDTO);
+    }
 }

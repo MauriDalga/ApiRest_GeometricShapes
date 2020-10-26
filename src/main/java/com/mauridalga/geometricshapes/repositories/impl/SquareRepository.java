@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 class SquareRepository implements ISquareRepository {
@@ -24,5 +25,15 @@ class SquareRepository implements ISquareRepository {
     @Override
     public Square insert(Square square) {
         return mongoRepository.insert(square);
+    }
+
+    @Override
+    public Optional<Square> findById(String id) {
+        return mongoRepository.findById(id);
+    }
+
+    @Override
+    public Square update(Square square) {
+        return mongoRepository.save(square);
     }
 }

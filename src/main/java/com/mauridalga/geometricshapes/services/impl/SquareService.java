@@ -6,9 +6,11 @@ import com.mauridalga.geometricshapes.domain.logic.factory.GeometricShapeLogicFa
 import com.mauridalga.geometricshapes.models.SquareDTO;
 import com.mauridalga.geometricshapes.repositories.ISquareRepository;
 import com.mauridalga.geometricshapes.services.ISquareService;
+import com.mauridalga.geometricshapes.services.exceptions.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SquareService implements ISquareService {
@@ -19,6 +21,7 @@ public class SquareService implements ISquareService {
         this.repository = repository;
         this.logicFactory = logicFactory;
     }
+
     @Override
     public List<Square> getAll() {
         return repository.getAll();
@@ -28,6 +31,21 @@ public class SquareService implements ISquareService {
     public Square create(SquareDTO squareDTO) {
         Square square = makeSquare(squareDTO);
         return repository.insert(square);
+    }
+
+    @Override
+    public Square updateById(String id, SquareDTO squareDTO) {
+        validateExistsById(id);
+        Square square = makeSquare(squareDTO);
+        square.setId(id);
+        return repository.update(square);
+    }
+
+    private void validateExistsById(String id) {
+        Optional<Square> squareOptional = repository.findById(id);
+        if (squareOptional.isEmpty()) {
+            throw new EntityNotFoundException(String.format("Square with id:'{%s}' not found", id));
+        }
     }
 
     private Square makeSquare(SquareDTO squareDTO) {

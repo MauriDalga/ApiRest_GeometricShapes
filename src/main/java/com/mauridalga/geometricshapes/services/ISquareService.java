@@ -9,4 +9,6 @@ public interface ISquareService {
     List<Square> getAll();
 
     Square create(SquareDTO squareDTO);
+
+    Square updateById(String id, SquareDTO squareDTO);
 }
