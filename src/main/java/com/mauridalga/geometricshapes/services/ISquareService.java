@@ -11,4 +11,6 @@ public interface ISquareService {
     Square create(SquareDTO squareDTO);
 
     Square updateById(String id, SquareDTO squareDTO);
+
+    void deleteById(String id);
 }

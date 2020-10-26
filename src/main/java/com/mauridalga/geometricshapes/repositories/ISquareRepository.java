@@ -13,4 +13,6 @@ public interface ISquareRepository {
     Optional<Square> findById(String id);
 
     Square update(Square square);
+
+    void deleteById(String id);
 }

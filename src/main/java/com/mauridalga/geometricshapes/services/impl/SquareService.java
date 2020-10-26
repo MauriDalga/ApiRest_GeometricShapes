@@ -41,6 +41,12 @@ public class SquareService implements ISquareService {
         return repository.update(square);
     }
 
+    @Override
+    public void deleteById(String id) {
+        validateExistsById(id);
+        repository.deleteById(id);
+    }
+
     private void validateExistsById(String id) {
         Optional<Square> squareOptional = repository.findById(id);
         if (squareOptional.isEmpty()) {

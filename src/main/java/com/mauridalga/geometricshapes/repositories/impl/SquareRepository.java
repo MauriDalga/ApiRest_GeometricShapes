@@ -36,4 +36,9 @@ class SquareRepository implements ISquareRepository {
     public Square update(Square square) {
         return mongoRepository.save(square);
     }
+
+    @Override
+    public void deleteById(String id) {
+        mongoRepository.deleteById(id);
+    }
 }

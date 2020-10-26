@@ -33,4 +33,9 @@ public class SquareController {
     public Square update(@PathVariable String id, @Valid @RequestBody SquareDTO squareDTO) {
         return service.updateById(id, squareDTO);
     }
+
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable String id) {
+        service.deleteById(id);
+    }
 }
