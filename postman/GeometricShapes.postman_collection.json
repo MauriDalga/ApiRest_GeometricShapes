@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "7b375973-c6cf-4c95-a582-c9e37b5efe38",
+		"name": "GeometricShapes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Circles",
+			"item": [
+				{
+					"name": "Delete Circle",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/circles/5f95d02278786276c333b2d",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"circles",
+								"5f95d02278786276c333b2d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Circles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/circles",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"circles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Circle",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"radius\": 9\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/circles/5f95d4a03ac78316de2ab2a0",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"circles",
+								"5f95d4a03ac78316de2ab2a0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Circle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"radius\": 6.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/circles",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"circles"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Triangles",
+			"item": [
+				{
+					"name": "Delete Triangles",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/triangles/5f95ff7d1bfdac1e1295903",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"triangles",
+								"5f95ff7d1bfdac1e1295903"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Triangles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/triangles",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"triangles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Triangles",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"base\": 6,\n    \"side1\": 3.5,\n    \"side2\": 25\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/triangles/5f960ad21bfdac1e12959033",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"triangles",
+								"5f960ad21bfdac1e12959033"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Triangles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"base\": 6.3,\n    \"side1\": 6,\n    \"side2\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/triangles",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"triangles"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Squares",
+			"item": [
+				{
+					"name": "Delete Square",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/squares/5f9627923c5d1f042dcdf826",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"squares",
+								"5f9627923c5d1f042dcdf826"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Squares",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/squares",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"squares"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Square",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"base\": 30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/squares/5f9627923c5d1f042dcdf82",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"squares",
+								"5f9627923c5d1f042dcdf82"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Square",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"base\": 36\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/squares",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"squares"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"variable": [
+		{
+			"id": "90096ee5-1eb5-48ad-b88b-abafbb002083",
+			"key": "url",
+			"value": "localhost:8080"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
