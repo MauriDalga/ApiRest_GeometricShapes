@@ -20,4 +20,9 @@ class SquareRepository implements ISquareRepository {
     public List<Square> getAll() {
         return mongoRepository.findAll();
     }
+
+    @Override
+    public Square insert(Square square) {
+        return mongoRepository.insert(square);
+    }
 }

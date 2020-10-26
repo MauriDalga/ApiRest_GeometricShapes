@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ISquareRepository {
     List<Square> getAll();
+
+    Square insert(Square square);
 }
